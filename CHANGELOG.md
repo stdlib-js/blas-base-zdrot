@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2024-07-10)
+## Unreleased (2024-07-11)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`a78f42b`](https://github.com/stdlib-js/stdlib/commit/a78f42b3295fe4513a15b90a837b60a63fc1f6bc) - **docs:** fix paths in examples and refactor array creation in benchmarks [(#2563)](https://github.com/stdlib-js/stdlib/pull/2563) _(by Aman Bhansali)_
 -   [`4d5293d`](https://github.com/stdlib-js/stdlib/commit/4d5293d0cfd81bd1016d1bcc372afefe20b1a211) - **feat:** add `blas/base/zdrot` [(#2257)](https://github.com/stdlib-js/stdlib/pull/2257) _(by Aman Bhansali, Athan Reines)_
 
 </details>
