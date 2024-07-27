@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-base-zdrot/tags). For example,
+
+```javascript
 import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@v0.1.0-esm/index.mjs';
 ```
 
@@ -257,7 +262,7 @@ import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ct
 import zcopy from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zcopy@esm/index.mjs';
 import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@esm/index.mjs';
 import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@esm/index.mjs';
-import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@v0.1.0-esm/index.mjs';
+import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@esm/index.mjs';
 
 function rand() {
     return new Complex128( discreteUniform( 0, 10 ), discreteUniform( -5, 5 ) );
