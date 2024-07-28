@@ -35,19 +35,32 @@ limitations under the License.
 
 > Applies a plane rotation.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-base-zdrot
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@esm/index.mjs';
-```
-The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-base-zdrot/tags). For example,
-
-```javascript
-import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@v0.1.0-esm/index.mjs';
+var zdrot = require( '@stdlib/blas-base-zdrot' );
 ```
 
 #### zdrot( N, zx, strideX, zy, strideY, c, s )
@@ -55,9 +68,9 @@ import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@v0.1.0-
 Applies a plane rotation.
 
 ```javascript
-import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
-import real from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-real@esm/index.mjs';
-import imag from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-imag@esm/index.mjs';
+var Complex128Array = require( '@stdlib/array-complex128' );
+var real = require( '@stdlib/complex-float64-real' );
+var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 var zy = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -94,9 +107,9 @@ The function has the following parameters:
 The `N` and stride parameters determine how values from `zx` and `zy` are accessed at runtime. For example, to apply a plane rotation to every other element,
 
 ```javascript
-import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
-import real from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-real@esm/index.mjs';
-import imag from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-imag@esm/index.mjs';
+var Complex128Array = require( '@stdlib/array-complex128' );
+var real = require( '@stdlib/complex-float64-real' );
+var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 var zy = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -127,9 +140,9 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
-import real from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-real@esm/index.mjs';
-import imag from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-imag@esm/index.mjs';
+var Complex128Array = require( '@stdlib/array-complex128' );
+var real = require( '@stdlib/complex-float64-real' );
+var imag = require( '@stdlib/complex-float64-imag' );
 
 // Initial arrays...
 var zx0 = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
@@ -165,9 +178,9 @@ im = imag( z );
 Applies a plane rotation using alternative indexing semantics.
 
 ```javascript
-import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
-import real from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-real@esm/index.mjs';
-import imag from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-imag@esm/index.mjs';
+var Complex128Array = require( '@stdlib/array-complex128' );
+var real = require( '@stdlib/complex-float64-real' );
+var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
 var zy = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -201,9 +214,9 @@ The function has the following additional parameters:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the offset parameters support indexing semantics based on starting indices. For example, to apply a plane rotation to every other element starting from the second element,
 
 ```javascript
-import Complex128Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-complex128@esm/index.mjs';
-import real from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-real@esm/index.mjs';
-import imag from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-imag@esm/index.mjs';
+var Complex128Array = require( '@stdlib/array-complex128' );
+var real = require( '@stdlib/complex-float64-real' );
+var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 var zy = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
@@ -250,19 +263,14 @@ im = imag( z );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@esm/index.mjs';
-import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
-import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@esm/index.mjs';
-import zcopy from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zcopy@esm/index.mjs';
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@esm/index.mjs';
-import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@esm/index.mjs';
-import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var Complex128 = require( '@stdlib/complex-float64-ctor' );
+var zcopy = require( '@stdlib/blas-base-zcopy' );
+var zeros = require( '@stdlib/array-zeros' );
+var logEach = require( '@stdlib/console-log-each' );
+var zdrot = require( '@stdlib/blas-base-zdrot' );
 
 function rand() {
     return new Complex128( discreteUniform( 0, 10 ), discreteUniform( -5, 5 ) );
@@ -280,10 +288,6 @@ zdrot( zx.length, zx, 1, zy, 1, 0.8, 0.6 );
 
 // Print the results:
 logEach( '(%s,%s) => (%s,%s)', zxc, zyc, zx, zy );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -292,7 +296,107 @@ logEach( '(%s,%s) => (%s,%s)', zxc, zyc, zx, zy );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/blas/base/zdrot.h"
+```
+
+#### c_zdrot( N, \*X, strideX, \*Y, strideY, c, s )
+
+Applies a plane rotation.
+
+```c
+double x[] = { 1.0, 2.0, 3.0, 4.0 }; // interleaved real and imaginary components
+double y[] = { 5.0, 6.0, 7.0, 8.0 };
+
+c_zdrot( 2, (void *)x, 1, (void *)Y, 1, 0.8, 0.6 );
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **zx**: `[inout] void*` first input array.
+-   **strideX**: `[in] CBLAS_INT` index increment for `zx`.
+-   **zy**: `[inout] void*` second input array.
+-   **strideY**: `[in] CBLAS_INT` index increment for `zy`.
+-   **c**: `[in] double` cosine of the angle of rotation.
+-   **s**: `[in] double` sine of the angle of rotation.
+
+```c
+void c_zdrot( const CBLAS_INT N, void *X, const CBLAS_INT strideX, void *Y, const CBLAS_INT strideY, const double c, const double s );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/blas/base/zdrot.h"
+#include <stdio.h>
+
+int main( void ) {
+    // Create strided arrays:
+    double zx[] = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 };
+    double zy[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+
+    // Specify the number of elements:
+    const int N = 4;
+
+    // Specify stride lengths:
+    const int strideX = 1;
+    const int strideY = -1;
+
+    // Copy elements:
+    c_zdrot( N, (void *)zx, strideX, (void *)zy, strideY, 0.8, 0.6 );
+
+    // Print the result:
+    for ( int i = 0; i < N; i++ ) {
+        printf( "zx[ %i ] = %lf + %lfj\n", i, zx[ i*2 ], zx[ (i*2)+1 ] );
+        printf( "zy[ %i ] = %lf + %lfj\n", i, zy[ i*2 ], zy[ (i*2)+1 ] );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -311,7 +415,7 @@ logEach( '(%s,%s) => (%s,%s)', zxc, zyc, zx, zy );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -341,8 +445,8 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/blas-base-zdrot.svg
 [npm-url]: https://npmjs.org/package/@stdlib/blas-base-zdrot
 
-[test-image]: https://github.com/stdlib-js/blas-base-zdrot/actions/workflows/test.yml/badge.svg?branch=v0.1.0
-[test-url]: https://github.com/stdlib-js/blas-base-zdrot/actions/workflows/test.yml?query=branch:v0.1.0
+[test-image]: https://github.com/stdlib-js/blas-base-zdrot/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/blas-base-zdrot/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/blas-base-zdrot/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/blas-base-zdrot?branch=main
@@ -380,7 +484,7 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex128/tree/esm
+[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex128
 
 </section>
 
