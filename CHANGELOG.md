@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`31d29ff`](https://github.com/stdlib-js/stdlib/commit/31d29ffd623c690f040954f73f0be0516de70600) - **test:** update test descriptions _(by Athan Reines)_
 -   [`4b21b5d`](https://github.com/stdlib-js/stdlib/commit/4b21b5dab671fd50cb2199f6a94518ebbd73fb3e) - **docs:** change variable naming in `blas/base/zdrot` [(#6879)](https://github.com/stdlib-js/stdlib/pull/6879) _(by Shabareesh Shetty, Athan Reines)_
 -   [`753fd55`](https://github.com/stdlib-js/stdlib/commit/753fd557418e004412e70379dfeda947bf319183) - **docs:** update examples for `blas/base/zdrot` [(#5209)](https://github.com/stdlib-js/stdlib/pull/5209) _(by Gururaj Gurram)_
 -   [`62364f6`](https://github.com/stdlib-js/stdlib/commit/62364f62ea823a3b52c2ad25660ecd80c71f8f36) - **style:** fix C comment alignment _(by Philipp Burckhardt)_
