@@ -33,76 +33,70 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Applies a plane rotation.
+> Apply a plane rotation.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-base-zdrot
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-zdrot = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@umd/browser.js' )
+var zdrot = require( '@stdlib/blas-base-zdrot' );
 ```
 
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var zdrot = require( 'path/to/vendor/umd/blas-base-zdrot/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.zdrot;
-})();
-</script>
-```
-
-#### zdrot( N, zx, strideX, zy, strideY, c, s )
+#### zdrot( N, x, strideX, y, strideY, c, s )
 
 Applies a plane rotation.
 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
 
-var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
-var zy = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
+var x = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
+var y = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-zdrot( zx.length, zx, 1, zy, 1, 0.8, 0.6 );
-// zx => <Complex128Array>[ ~0.8, ~1.6, ~2.4, ~3.2, 4.0, ~4.8, ~5.6, ~6.4 ]
-// zy => <Complex128Array>[ ~-0.6, ~-1.2, ~-1.8, ~-2.4, -3.0, ~-3.6, ~-4.2, ~-4.8 ]
+zdrot( x.length, x, 1, y, 1, 0.8, 0.6 );
+// x => <Complex128Array>[ ~0.8, ~1.6, ~2.4, ~3.2, 4.0, ~4.8, ~5.6, ~6.4 ]
+// y => <Complex128Array>[ ~-0.6, ~-1.2, ~-1.8, ~-2.4, -3.0, ~-3.6, ~-4.2, ~-4.8 ]
 ```
 
 The function has the following parameters:
 
 -   **N**: number of indexed elements.
--   **zx**: first input [`Complex128Array`][@stdlib/array/complex128].
--   **strideX**: index increment for `zx`.
--   **zy**: second input [`Complex128Array`][@stdlib/array/complex128].
--   **strideY**: index increment for `zy`.
+-   **x**: first input [`Complex128Array`][@stdlib/array/complex128].
+-   **strideX**: index increment for `x`.
+-   **y**: second input [`Complex128Array`][@stdlib/array/complex128].
+-   **strideY**: index increment for `y`.
 
-The `N` and stride parameters determine how values from `zx` and `zy` are accessed at runtime. For example, to apply a plane rotation to every other element,
+The `N` and stride parameters determine how values from `x` and `y` are accessed at runtime. For example, to apply a plane rotation to every other element,
 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
 
-var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
-var zy = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
+var x = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
+var y = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-zdrot( 2, zx, 2, zy, 2, 0.8, 0.6 );
-// zx => <Complex128Array>[ ~0.8, ~1.6, 3.0, 4.0, 4.0, ~4.8, 7.0, 8.0 ]
-// zy => <Complex128Array>[ ~-0.6, ~-1.2,  0.0, 0.0, -3.0, ~-3.6,  0.0, 0.0 ]
+zdrot( 2, x, 2, y, 2, 0.8, 0.6 );
+// x => <Complex128Array>[ ~0.8, ~1.6, 3.0, 4.0, 4.0, ~4.8, 7.0, 8.0 ]
+// y => <Complex128Array>[ ~-0.6, ~-1.2, 0.0, 0.0, -3.0, ~-3.6, 0.0, 0.0 ]
 ```
 
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][mdn-typed-array] views.
@@ -113,49 +107,49 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 var Complex128Array = require( '@stdlib/array-complex128' );
 
 // Initial arrays...
-var zx0 = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
-var zy0 = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
+var x0 = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
+var y0 = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
 // Create offset views...
-var zx1 = new Complex128Array( zx0.buffer, zx0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
-var zy1 = new Complex128Array( zy0.buffer, zy0.BYTES_PER_ELEMENT*2 ); // start at 3rd element
+var x1 = new Complex128Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
+var y1 = new Complex128Array( y0.buffer, y0.BYTES_PER_ELEMENT*2 ); // start at 3rd element
 
-zdrot( 2, zx1, -2, zy1, 1, 0.8, 0.6 );
-// zx0 => <Complex128Array>[ 1.0, 2.0, ~2.4, ~3.2, 5.0, 6.0, ~5.6, ~6.4 ]
-// zy0 => <Complex128Array>[ 0.0, 0.0,  0.0, 0.0, ~-4.2, ~-4.8, ~-1.8, ~-2.4 ]
+zdrot( 2, x1, -2, y1, 1, 0.8, 0.6 );
+// x0 => <Complex128Array>[ 1.0, 2.0, ~2.4, ~3.2, 5.0, 6.0, ~5.6, ~6.4 ]
+// y0 => <Complex128Array>[ 0.0, 0.0, 0.0, 0.0, ~-4.2, ~-4.8, ~-1.8, ~-2.4 ]
 ```
 
-#### zdrot.ndarray( N, zx, strideX, offsetX, zy, strideY, offsetY, c, s )
+#### zdrot.ndarray( N, x, strideX, offsetX, y, strideY, offsetY, c, s )
 
 Applies a plane rotation using alternative indexing semantics.
 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
 
-var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
-var zy = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
+var x = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
+var y = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-zdrot.ndarray( zx.length, zx, 1, 0, zy, 1, 0, 0.8, 0.6 );
-// zx => <Complex128Array>[ ~0.8, ~1.6, ~2.4, ~3.2, 4.0, ~4.8 ]
-// zy => <Complex128Array>[ ~-0.6, ~-1.2, ~-1.8, ~-2.4, -3.0, ~-3.6 ]
+zdrot.ndarray( x.length, x, 1, 0, y, 1, 0, 0.8, 0.6 );
+// x => <Complex128Array>[ ~0.8, ~1.6, ~2.4, ~3.2, 4.0, ~4.8 ]
+// y => <Complex128Array>[ ~-0.6, ~-1.2, ~-1.8, ~-2.4, -3.0, ~-3.6 ]
 ```
 
 The function has the following additional parameters:
 
--   **offsetX**: starting index for `zx`.
--   **offsetY**: starting index for `zy`.
+-   **offsetX**: starting index for `x`.
+-   **offsetY**: starting index for `y`.
 
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the offset parameters support indexing semantics based on starting indices. For example, to apply a plane rotation to every other element starting from the second element,
 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
 
-var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
-var zy = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
+var x = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
+var y = new Complex128Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-zdrot.ndarray( 2, zx, 2, 1, zy, 2, 1, 0.8, 0.6 );
-// zx => <Complex128Array>[ 1.0, 2.0, ~2.4, ~3.2, 5.0, 6.0, ~5.6, ~6.4 ]
-// zy => <Complex128Array>[ 0.0, 0.0, ~-1.8, ~-2.4, 0.0, 0.0, ~-4.2, ~-4.8 ]
+zdrot.ndarray( 2, x, 2, 1, y, 2, 1, 0.8, 0.6 );
+// x => <Complex128Array>[ 1.0, 2.0, ~2.4, ~3.2, 5.0, 6.0, ~5.6, ~6.4 ]
+// y => <Complex128Array>[ 0.0, 0.0, ~-1.8, ~-2.4, 0.0, 0.0, ~-4.2, ~-4.8 ]
 ```
 
 </section>
@@ -166,7 +160,7 @@ zdrot.ndarray( 2, zx, 2, 1, zy, 2, 1, 0.8, 0.6 );
 
 ## Notes
 
--   If `N <= 0`, both functions leave `zx` and `zy` unchanged.
+-   If `N <= 0`, both functions leave `x` and `y` unchanged.
 -   `zdrot()` corresponds to the [BLAS][blas] level 1 function [`zdrot`][zdrot].
 
 </section>
@@ -179,41 +173,31 @@ zdrot.ndarray( 2, zx, 2, 1, zy, 2, 1, 0.8, 0.6 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zcopy@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var Complex128 = require( '@stdlib/complex-float64-ctor' );
+var zcopy = require( '@stdlib/blas-base-zcopy' );
+var zeros = require( '@stdlib/array-zeros' );
+var logEach = require( '@stdlib/console-log-each' );
+var zdrot = require( '@stdlib/blas-base-zdrot' );
 
 function rand() {
     return new Complex128( discreteUniform( 0, 10 ), discreteUniform( -5, 5 ) );
 }
 
 // Generate random input arrays:
-var zx = filledarrayBy( 10, 'complex128', rand );
-var zxc = zcopy( zx.length, zx, 1, zeros( zx.length, 'complex128' ), 1 );
+var x = filledarrayBy( 10, 'complex128', rand );
+var xc = zcopy( x.length, x, 1, zeros( x.length, 'complex128' ), 1 );
 
-var zy = filledarrayBy( 10, 'complex128', rand );
-var zyc = zcopy( zy.length, zy, 1, zeros( zy.length, 'complex128' ), 1 );
+var y = filledarrayBy( 10, 'complex128', rand );
+var yc = zcopy( y.length, y, 1, zeros( y.length, 'complex128' ), 1 );
 
 // Apply a plane rotation:
-zdrot( zx.length, zx, 1, zy, 1, 0.8, 0.6 );
+zdrot( x.length, x, 1, y, 1, 0.8, 0.6 );
 
 // Print the results:
-logEach( '(%s,%s) => (%s,%s)', zxc, zyc, zx, zy );
-
-})();
-</script>
-</body>
-</html>
+logEach( '(%s,%s) => (%s,%s)', xc, yc, x, y );
 ```
 
 </section>
@@ -222,7 +206,134 @@ logEach( '(%s,%s) => (%s,%s)', zxc, zyc, zx, zy );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/blas/base/zdrot.h"
+```
+
+#### c_zdrot( N, \*X, strideX, \*Y, strideY, c, s )
+
+Applies a plane rotation.
+
+```c
+double x[] = { 1.0, 2.0, 3.0, 4.0 }; // interleaved real and imaginary components
+double y[] = { 5.0, 6.0, 7.0, 8.0 };
+
+c_zdrot( 2, (void *)x, 1, (void *)y, 1, 0.8, 0.6 );
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **X**: `[inout] void*` first input array.
+-   **strideX**: `[in] CBLAS_INT` index increment for `X`.
+-   **Y**: `[inout] void*` second input array.
+-   **strideY**: `[in] CBLAS_INT` index increment for `Y`.
+-   **c**: `[in] double` cosine of the angle of rotation.
+-   **s**: `[in] double` sine of the angle of rotation.
+
+```c
+void c_zdrot( const CBLAS_INT N, void *X, const CBLAS_INT strideX, void *Y, const CBLAS_INT strideY, const double c, const double s );
+```
+
+#### c_zdrot_ndarray( N, \*X, strideX, offsetX, \*Y, strideY, offsetY, c, s )
+
+Applies a plane rotation using alternative indexing semantics.
+
+```c
+double x[] = { 1.0, 2.0, 3.0, 4.0 }; // interleaved real and imaginary components
+double y[] = { 5.0, 6.0, 7.0, 8.0 };
+
+c_zdrot_ndarray( 2, (void *)x, 1, 0, (void *)y, 1, 0, 0.8, 0.6 );
+```
+
+The function accepts the following arguments:
+
+-   **N**: `[in] CBLAS_INT` number of indexed elements.
+-   **X**: `[inout] void*` first input array.
+-   **strideX**: `[in] CBLAS_INT` index increment for `X`.
+-   **offsetX**: `[in] CBLAS_INT` starting index for `X`.
+-   **Y**: `[inout] void*` second input array.
+-   **strideY**: `[in] CBLAS_INT` index increment for `Y`.
+-   **offsetY**: `[in] CBLAS_INT` starting index for `Y`.
+-   **c**: `[in] double` cosine of the angle of rotation.
+-   **s**: `[in] double` sine of the angle of rotation.
+
+```c
+void c_zdrot_ndarray( const CBLAS_INT N, void *X, const CBLAS_INT strideX, const CBLAS_INT offsetX, void *Y, const CBLAS_INT strideY, const CBLAS_INT offsetY, const double c, const double s );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/blas/base/zdrot.h"
+#include <stdio.h>
+
+int main( void ) {
+    // Create strided arrays:
+    double x[] = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 };
+    double y[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+
+    // Specify the number of elements:
+    const int N = 4;
+
+    // Specify stride lengths:
+    const int strideX = 1;
+    const int strideY = -1;
+
+    // Copy elements:
+    c_zdrot( N, (void *)x, strideX, (void *)y, strideY, 0.8, 0.6 );
+
+    // Print the result:
+    for ( int i = 0; i < N; i++ ) {
+        printf( "x[ %i ] = %lf + %lfj\n", i, x[ i*2 ], x[ (i*2)+1 ] );
+        printf( "y[ %i ] = %lf + %lfj\n", i, y[ i*2 ], y[ (i*2)+1 ] );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -310,7 +421,7 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex128/tree/umd
+[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex128
 
 </section>
 
