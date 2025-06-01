@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-05-19)
+## Unreleased (2025-06-01)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`4b21b5d`](https://github.com/stdlib-js/stdlib/commit/4b21b5dab671fd50cb2199f6a94518ebbd73fb3e) - **docs:** change variable naming in `blas/base/zdrot` [(#6879)](https://github.com/stdlib-js/stdlib/pull/6879) _(by Shabareesh Shetty, Athan Reines)_
 -   [`753fd55`](https://github.com/stdlib-js/stdlib/commit/753fd557418e004412e70379dfeda947bf319183) - **docs:** update examples for `blas/base/zdrot` [(#5209)](https://github.com/stdlib-js/stdlib/pull/5209) _(by Gururaj Gurram)_
 -   [`62364f6`](https://github.com/stdlib-js/stdlib/commit/62364f62ea823a3b52c2ad25660ecd80c71f8f36) - **style:** fix C comment alignment _(by Philipp Burckhardt)_
 -   [`7462db7`](https://github.com/stdlib-js/stdlib/commit/7462db759c64f25e883c731169e57a48067d076d) - **feat:** add C `ndarray` implementation for `blas/base/zdrot` [(#3069)](https://github.com/stdlib-js/stdlib/pull/3069) _(by Aman Bhansali, Athan Reines, stdlib-bot)_
@@ -39,12 +40,13 @@
 
 ### Contributors
 
-A total of 4 people contributed to this release. Thank you to the following contributors:
+A total of 5 people contributed to this release. Thank you to the following contributors:
 
 -   Aman Bhansali
 -   Athan Reines
 -   Gururaj Gurram
 -   Philipp Burckhardt
+-   Shabareesh Shetty
 
 </section>
 
