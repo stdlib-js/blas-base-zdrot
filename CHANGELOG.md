@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-06-01)
+## Unreleased (2025-06-07)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`51bf6f9`](https://github.com/stdlib-js/stdlib/commit/51bf6f9d2bb027aacecda87e02f957badbc246b0) - **bench:** fix formatting _(by Athan Reines)_
 -   [`31d29ff`](https://github.com/stdlib-js/stdlib/commit/31d29ffd623c690f040954f73f0be0516de70600) - **test:** update test descriptions _(by Athan Reines)_
 -   [`4b21b5d`](https://github.com/stdlib-js/stdlib/commit/4b21b5dab671fd50cb2199f6a94518ebbd73fb3e) - **docs:** change variable naming in `blas/base/zdrot` [(#6879)](https://github.com/stdlib-js/stdlib/pull/6879) _(by Shabareesh Shetty, Athan Reines)_
 -   [`753fd55`](https://github.com/stdlib-js/stdlib/commit/753fd557418e004412e70379dfeda947bf319183) - **docs:** update examples for `blas/base/zdrot` [(#5209)](https://github.com/stdlib-js/stdlib/pull/5209) _(by Gururaj Gurram)_
