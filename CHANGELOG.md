@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`09c9ceb`](https://github.com/stdlib-js/stdlib/commit/09c9ceb58c6dd23c10f1980094851983c57d693f) - **chore:** fix formatting _(by Athan Reines)_
 -   [`51bf6f9`](https://github.com/stdlib-js/stdlib/commit/51bf6f9d2bb027aacecda87e02f957badbc246b0) - **bench:** fix formatting _(by Athan Reines)_
 -   [`31d29ff`](https://github.com/stdlib-js/stdlib/commit/31d29ffd623c690f040954f73f0be0516de70600) - **test:** update test descriptions _(by Athan Reines)_
 -   [`4b21b5d`](https://github.com/stdlib-js/stdlib/commit/4b21b5dab671fd50cb2199f6a94518ebbd73fb3e) - **docs:** change variable naming in `blas/base/zdrot` [(#6879)](https://github.com/stdlib-js/stdlib/pull/6879) _(by Shabareesh Shetty, Athan Reines)_
