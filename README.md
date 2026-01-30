@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@deno/mod.js';
+import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@v0.2.0-deno/mod.js';
 ```
 
 #### zdrot( N, x, strideX, y, strideY, c, s )
@@ -162,7 +162,7 @@ import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ct
 import zcopy from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zcopy@deno/mod.js';
 import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@deno/mod.js';
 import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@deno/mod.js';
-import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@deno/mod.js';
+import zdrot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@v0.2.0-deno/mod.js';
 
 function rand() {
     return new Complex128( discreteUniform( 0, 10 ), discreteUniform( -5, 5 ) );
