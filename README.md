@@ -44,7 +44,7 @@ limitations under the License.
 To use in Observable,
 
 ```javascript
-zdrot = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@umd/browser.js' )
+zdrot = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@v0.2.1-umd/browser.js' )
 ```
 
 To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
@@ -56,7 +56,7 @@ var zdrot = require( 'path/to/vendor/umd/blas-base-zdrot/index.js' )
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@v0.2.1-umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -189,7 +189,7 @@ zdrot.ndarray( 2, x, 2, 1, y, 2, 1, 0.8, 0.6 );
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zcopy@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zdrot@v0.2.1-umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
