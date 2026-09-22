@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-09-13)
+## Unreleased (2026-09-22)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`02494e9`](https://github.com/stdlib-js/stdlib/commit/02494e960b94022be4239f15646381b1bc90ed38) - **test:** migrate `blas/base/zdrot` to ULP-based assertions [(#15209)](https://github.com/stdlib-js/stdlib/pull/15209) _(by Athan Reines, Philipp Burckhardt)_
 -   [`3208321`](https://github.com/stdlib-js/stdlib/commit/320832192c8d32b18d24c7342ba1cf03cc5affea) - **bench:** refactor to use dynamic memory allocation [(#14099)](https://github.com/stdlib-js/stdlib/pull/14099) _(by Philipp Burckhardt, Athan Reines)_
 -   [`941a193`](https://github.com/stdlib-js/stdlib/commit/941a1939d08e0aff5c4fe5b3106cba6410566cd6) - **bench:** use string interpolation in `blas/base/zdrot` [(#10254)](https://github.com/stdlib-js/stdlib/pull/10254) _(by Om-A-osc)_
 
